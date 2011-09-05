@@ -24,6 +24,7 @@ This setting can be found in Alfred's preferences under General>Sync
 
 # Usage
 Bring up Alfred, type `dmg  ↩`
+You can change this command in the extensions tab of Alfred's settings.
 
 In the future I will add a query after `dmg` that would let you pick specific items to install. For now it just runs on the most recently downloaded one.
 
