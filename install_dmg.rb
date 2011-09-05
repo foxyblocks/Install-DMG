@@ -1,21 +1,17 @@
     #!/usr/bin/env ruby
-
-    require 'fileutils'
     require 'pathname'
-    include FileUtils
 
     #go to downloads directory
     puts "installing most recent .dmg"
-    cd File.expand_path("~/Downloads/")
-    path = Pathname.new('.')
 
-    #find most recent .dmg file
-    files = path.entries.collect { |file| path+file }.sort { |file1,file2| file1.ctime <=> file2.ctime }
-    files.reject! { |file| ((file.file? and file.to_s.include?(".dmg")) ? false : true) }
+    # find most recent .dmg file
+    path  = Pathname.new(File.expand_path '~/Downloads/')
+    files = Pathname.glob(path + '*.dmg').sort_by &:ctime
+    
     last_dmg = files.last
 
-    #if there is no .dmg file then reject this.
-    if !last_dmg
+    # if there is no .dmg file then reject this.
+    unless last_dmg
       puts "No DMG files" 
       exit
     end
