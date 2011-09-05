@@ -1,6 +1,6 @@
 #Install DMG for Alfred
 
-An extension for Alfred.app that takes the pain out of applications distributed through .dmgs. 
+An extension for Alfred.app that takes the pain out of applications distributed through .dmg files. 
 When this command is run it:
 
 1. finds the most recently downloaded .dmg file in the `~/Downloads` directory 
@@ -29,6 +29,9 @@ Bring up Alfred, type `dmg  ↩`
 You can change this command in the extensions tab of Alfred's settings.
 
 In the future I will add a query after `dmg` that would let you pick specific items to install. For now it just runs on the most recently downloaded one.
+
+# Usage without Alfred
+The extension is basically a wrapper around a ruby script. If you don't own/want Alfred you can totally just run that script and it does the same thing.
 
 
 #Pull Requests
